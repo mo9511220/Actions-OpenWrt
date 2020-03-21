@@ -10,23 +10,23 @@ name: Build OpenWrt
 
 on:
   release:
-    types: published
+    types: [published]
   push:
     branches:
-      - master
+      - dev-19.07
     paths:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-#  watch:
-#    types: started
+  watch:
+   types: [started]
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_BRANCH: dev-19.07
   CONFIG_FILE: .config
   DIY_SH: diy.sh
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
